@@ -1,0 +1,1 @@
+<img src='<?="/bitrix/templates/".SITE_TEMPLATE_ID."/images/logo_mobile.png"?>' />

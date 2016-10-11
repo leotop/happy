@@ -1,0 +1,418 @@
+// global helpers
+@import "variables.less"; 
+@import "mixins.less"; 
+
+#react-checkout {
+	h1 {
+		font-size: 25px;
+        font-style: italic;
+        line-height: 1.5;
+        padding: 20px 0;
+        margin-bottom: 20px;
+        background: url(../images/cross-red.png) repeat-x 0 100%;
+	}
+	.react-checkout-column2 {
+		width: ~"calc(36% - 20px)" !important;
+	}
+}
+
+.react-checkout-column {
+	box-shadow: none !important;
+	border-radius: 0 !important;
+	margin-bottom: 30px;
+
+
+	* {
+		box-shadow: none !important;
+		font-size: inherit !important;
+		font-weight: 300 !important;
+	}
+}
+
+.react-checkout-column1 {
+	border: 1px solid @gray;
+
+	// Tabs
+	> div:first-child {
+		> div:first-child {
+			div {
+				font-size: @font-size-large !important;
+			}
+		}
+	}
+
+	.react-checkout-city {
+		height: auto !important;
+		float: left;
+		padding: 20px 10px 10px !important;
+
+		> div > div {
+			margin-top: 0 !important;
+			margin-bottom: 0 !important;
+			height: auto !important;
+		}
+
+		> div > span {
+			line-height: 36px !important;
+		}
+
+		> span {
+			color: @gray !important;
+		}
+
+		input {
+			background: #fff !important;
+			padding-left: 5px !important;
+			padding-right: 5px !important;
+			line-height: 37px !important;
+			height: 37px !important;
+
+			+ hr,
+			+ hr + hr {
+				bottom: 0 !important;
+			}
+		}
+
+		button {
+			margin-bottom: 10px !important;
+
+			span {
+				text-transform: none !important;
+				font-weight: 500 !important;
+			}
+			
+		}
+	}
+
+	.react-checkout-persona,
+	.react-checkout-company {
+		float: left;
+		width: 100%;
+	}
+
+	#react-checkout-shipping-form,
+	#react-checkout-payment-form,
+	#react-checkout-billing-form {
+		float: left;
+		width: 100%;
+
+		// Title
+		> div:first-child {
+			padding-left: 40px !important;
+			padding-bottom: 0 !important;
+    		padding-top: 0 !important;
+    		line-height: 30px !important;
+    		margin-top: 10px;
+    		margin-bottom: 20px;
+    		font-size: @font-size-large !important;
+
+			// Circle
+			.react-checkout-spinners + div,
+		    > div:first-child:not(.react-checkout-spinners) {
+		    	top: 0 !important;
+		    	left: 0 !important;
+		    	height: 30px !important;
+    			width: 30px !important;
+    			line-height: 30px !important;
+    			font-size: 20px !important;
+    			background-color: @gray !important;
+
+    			span {
+    				font-weight: 500 !important;
+    			}
+
+    			// Title div
+    			+ div {
+    				font-weight: 500 !important;
+    				font-style: italic !important;
+    			}
+		    }
+		}
+	}
+
+	#react-checkout-shipping-form,
+	#react-checkout-payment-form {
+		background: url(../images/dashed-line.png) 0 100% repeat-x;
+		margin-bottom: 10px;
+		padding-bottom: 20px;
+	}
+
+	#react-checkout-shipping-form {
+		.react-checkout-shipping-columns {
+			@media (max-width: @screen-xs-max) {
+				display: block !important;
+			}
+
+			.react-checkout-shipping-column {
+				&:first-child {
+					padding-left: 0 !important;
+				}
+
+				@media (max-width: @screen-xs-max) {
+					width: 100% !important;
+					padding-left: 0 !important;
+					padding-bottom: 10px !important;
+					border: none !important;
+				}
+
+				border-right-color: @gray-lighter !important;
+
+				> span:first-child {
+					display: none;
+				}
+
+				.react-checkout-shipping-carrier {
+					> span {
+						margin-bottom: 10px;
+						display: inline-block;
+						font-weight: 500 !important;
+					}
+
+					.react-checkout-shipping-carrier-list {
+						label {
+							font-size: @font-size-small !important;
+							line-height: 1.3 !important;
+						}
+					}
+				}
+			}
+		}
+
+		+ div,
+		+ div + div {
+			float: left;
+			width: 100%;
+		}
+	}
+
+	#react-checkout-payment-form {
+		.react-checkout-payment-list {
+			> div {
+			}
+		}
+	}
+	
+	#react-checkout-billing-form {
+		margin-bottom: 30px;
+
+		// Title
+		> div:first-child {
+			margin-bottom: 0 !important;
+		}
+	}
+
+	.react-checkout-billing-form {
+		> div {
+			width: 100% !important;
+			line-height: 1.2 !important;
+
+			label {
+				color: @text-color !important;
+			}
+
+			hr {
+				border-bottom-color: @gray !important;
+			}
+		}
+	}
+
+	// Юр.лицо
+	.react-checkout-company {
+		#react-checkout-shipping-form {
+			background: none !important;
+		}
+	}
+
+	#react-checkout-company-details-form {
+		display: block !important;
+
+		.react-checkout-billing-column {
+			width: 100% !important;
+
+			> div {
+				width: 100% !important;
+			}
+		}
+	}
+
+	// Order Button
+	.pb-container  {
+		text-align: right !important;
+
+		.pb-button {
+			color: @btn-primary-color !important;
+			background: @brand-secondary !important;
+			border: 1px solid @brand-secondary !important;
+			border-radius: 0 !important;
+			font-size: 20px !important;
+			height: auto !important;
+			padding: @padding-large-vertical @padding-large-horizontal !important;
+			width: auto !important;
+
+			&:hover {
+				background: @brand-primary !important;
+				border: 1px solid @brand-primary !important;
+			}
+		}
+
+		&.loading {
+			position: absolute;
+		    top: 0;
+		    left: 0;
+		    right: 0;
+
+			.pb-button {
+				background: none !important;
+				border: none !important;
+				padding: 0 !important;
+				width: 54px !important;
+			    height: 54px !important;
+			    position: relative;
+
+				svg {
+					color: @brand-secondary;
+					left: 0;
+					top: 0;
+				}
+			}
+		}
+	}
+}
+
+.react-checkout-column2 {
+	background-color: @gray-lighter !important;
+
+	.react-checkout-cart {
+		hr {
+			display: none;
+		}
+
+		h2 {
+			font-size: @font-size-large !important;
+			font-weight: @font-weight-bold !important;
+			margin-bottom: 20px !important;
+		}
+
+		h2 + div {
+			padding: 0 !important;
+
+			> div:first-child {
+				height: auto !important;
+			}
+		}
+
+		[data-reactid*=subtotal],
+		[data-reactid*=shipping],
+		[data-reactid*=grand_total] {
+			padding: 0 0 20px 0 !important;
+
+			[data-reactid*=primaryText] {
+				// float: left;
+				width: 100%;
+			}
+
+			.price {
+				font-size: @font-size-large !important;
+				font-weight: @font-weight-bold !important;
+				color: @brand-secondary !important;
+				float: right;
+			}
+		}
+
+		[data-reactid*=subtotal] {
+			margin-top: 30px;
+		}
+
+		[data-reactid*=shipping] {
+			.price {
+				margin-top: 5px;
+			}
+		}
+
+		[data-reactid*=grand_total] {
+			margin-top: 20px;
+			font-weight: @font-weight-bold !important;
+			font-size: @font-size-large !important;
+
+			.price {
+				font-size: 28px !important;
+				color: @brand-secondary !important;
+			}
+		}
+
+		> div {
+			background-color: transparent !important;
+			padding: 10px !important;
+
+			> div:first-child {
+				background-color: #fff !important;
+			}
+
+			.react-checkout-product-image {
+				clear: none !important;
+				width: 60px !important;
+				left: 0 !important;
+				padding: 0 !important;
+				margin-top: 20px;
+				margin-left: 10px;
+
+				img {
+	                width: 60px !important;
+	                height: 60px !important;
+	                border: 1px solid @gray;
+	            }				
+			}
+
+			.react-checkout-product-item {
+				float: none !important;
+				padding-left: 80px !important;
+				width: 100% !important;
+				position: relative;
+				padding-top: 20px;
+				padding-bottom: 20px;
+				padding-right: 10px;
+
+				&:not(:last-child) {
+					background: url(../images/dashed-line.png) 0 100% repeat-x;
+				}
+
+				h2.product-name {
+					width: 100% !important;
+					font-size: @font-size-small !important;
+					font-weight: @font-weight-bold !important;
+					padding: 0 !important;
+					line-height: 1.2 !important;
+					margin-bottom: 10px !important;
+
+					a {
+						color: @text-color !important;
+						font-weight: @font-weight-bold !important;
+					}
+
+				}
+
+				.sku,
+				.qty,
+				.options {
+					font-size: @font-size-small !important;
+				}
+
+				.price {
+					position: absolute;
+				    right: 10px;
+				    bottom: 20px;
+				    margin: 0;
+				    font-size: @font-size-large !important;
+				    font-weight: @font-weight-bold !important;
+				}
+			}
+		}
+		
+	}
+}
+
+.react-checkout-spinners {
+	div {
+		background-color: @brand-secondary !important;
+	}
+}

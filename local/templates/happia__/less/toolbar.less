@@ -1,0 +1,135 @@
+@import "variables.less";
+@import "mixins.less";
+@import "helpers.less";
+//
+// Toolbar
+// --------------------------------------------------
+.toolbar { 
+    margin-bottom: @line-height-computed;
+    .make-md-column(7);
+    padding-right: 0;
+
+    label {
+        font-weight: normal;
+        padding-right: 7px;
+    }
+
+    .amount,
+    .limiter,
+    .sort-by {
+        display: inline-block;
+        line-height: @line-height-computed * 2;
+
+        @media (max-width: @screen-xs-max) {
+            margin-bottom: (@line-height-computed / 2); 
+        }
+    }
+
+    .amount {
+        text-align: left;
+    }
+
+    .view-mode {
+        float: right;
+        line-height: @line-height-computed * 2;
+
+        a {
+            .square-icon-link;
+        }
+
+        span {
+            .square-icon-static;
+            background-color: @gray-lighter;
+        }
+    }
+    
+    .limiter {
+        text-align: right;
+
+        > label {
+            display: inline-block;
+        }
+
+        > select {
+            display: inline-block;
+            width: auto;
+            vertical-align: middle;
+        }
+    }  
+
+    .sorter {
+        float: right;
+    }
+
+    .sort-by {
+        white-space: nowrap;
+        text-align: right;
+ 
+         > select {
+            display: inline-block;
+            width: auto;
+            vertical-align: middle;
+        }
+
+        a {
+            color: @black;
+        }
+    }
+
+    .pager-list {
+        .make-xs-column(6);
+
+        .pagination {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+    }
+}
+
+@media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+    .col3-layout & {
+        .toolbar {
+            .make-row();
+            margin-bottom: 0;
+        }
+
+        .amount,
+        .limiter,
+        .sort-by,
+        .view-mode {
+            .make-md-column(6);    
+            margin-right: 0;
+            margin-bottom: 10px;
+        } 
+
+        .amount,
+        .view-mode {
+            text-align: left;
+        }
+
+        .limiter,
+        .sort-by {
+            text-align: right;
+        }
+
+        .sort-by {
+            .make-md-column-push(6);            
+        }
+
+        .view-mode {
+            .make-md-column-pull(6);            
+        }
+
+
+    }            
+}
+
+
+// Tolbar at bottom
+// -------------------------
+.toolbar-bottom {
+    .pager-wrapper,
+    .view-mode .btn {
+        display: none;
+    }
+}

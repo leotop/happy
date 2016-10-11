@@ -1,0 +1,50 @@
+.btn-primary {
+    .btn-primary !important;
+}
+
+.btn-secondary {
+    .btn-secondary !important;
+}
+
+.button,
+.button-reset {
+    .btn;
+    .btn-default;
+}
+
+.btn-cart {
+	.btn-secondary;
+}
+
+.btn-gray {
+	.btn;
+	background-color: @gray;
+    border-color: @gray;
+    color: #fff;
+
+    &:hover {
+    	background-color: @gray-dark;
+	    border-color: @gray-dark;
+	    color: #fff;
+    }
+}
+
+.btn.current {
+    .btn.active;
+}
+
+.btn-default.active,
+.btn-default.current {
+    background: @gray-lighter;
+    box-shadow: none;
+}
+
+.btn-primary.current,
+.btn-primary.active {
+  background:  darken(@btn-primary-bg, 5%);
+}
+
+.btn-secondary.current,
+.btn-secondary.active {
+  background:  darken(@btn-secondary-bg, 5%);
+}

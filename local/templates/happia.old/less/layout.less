@@ -1,0 +1,150 @@
+@import "variables.less";
+@import "mixins.less";
+@import "helpers.less";
+// Body reset
+// -------------------------
+html {
+    overflow-x: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+.tablebodytext {
+    display: none; // bitrix demo message
+}
+
+// ul,
+// ol {
+//     margin: 0;
+//     padding: 0;
+//     list-style: none;
+// }
+
+h1, .h1 {
+    margin-top: 0;
+}
+
+body {
+    font-family: @font-family-base;
+    min-height: 100%;
+
+    @media (max-width: @grid-float-breakpoint-max) {
+        margin-top: @navbar-mobile-height + 10;
+    }
+}
+
+#back-to-top {
+    .btn;
+    .btn-gray;
+    font-size: @font-size-large;
+    position: fixed;
+    right: 50px;
+    bottom: 100px;
+
+    @media (max-width: @screen-xs-max) {
+        right: 20px;
+        bottom: 20px;
+    }
+}
+
+.col-main {
+    background: #fff;
+}
+
+.col1-layout {
+    .col-main {
+        .make-xs-column(12);
+        .body-space-padding;
+        position: static;
+    }
+
+    &.catalog-product-view {
+        .col-main {
+            padding: 0 !important;
+        }  
+    }
+}
+
+.col2-left-layout {
+    .col-left {
+        .make-xs-column(12);
+        .make-sm-column(12);
+
+        .make-md-column(3);
+        .make-md-column-pull(9);
+
+        .make-lg-column(3);
+        .make-lg-column-pull(9);
+
+        .padding-left-lg(@body-side-space);
+    }
+
+    .col-main {
+        .make-xs-column(12);
+        .make-sm-column(12);
+
+        .make-md-column(9);
+        .make-md-column-push(3);
+
+        .make-lg-column(9);
+        .make-lg-column-push(3);
+
+        .padding-right-lg(@body-side-space);
+    }
+}
+
+.col2-right-layout {
+    .col-right {
+        .make-xs-column(12);
+        .make-sm-column(12);
+        .make-md-column(3);
+        .make-lg-column(3);
+        .padding-right-lg(@body-side-space);
+    }
+
+    .col-main {
+        .make-xs-column(12);
+        .make-sm-column(12);
+        .make-md-column(9);
+        .make-lg-column(9);
+        .padding-left-lg(@body-side-space);
+    }  
+}
+
+.col3-layout {
+    .col-left {
+        .make-xs-column(12);
+        .make-sm-column(6);
+
+        .make-md-column(3);
+        .make-md-column-pull(6);
+
+        .make-lg-column(2);
+        .make-lg-column-pull(8);
+
+        .padding-left-lg(@body-side-space);
+    }
+
+    .col-right {
+        .make-xs-column(12);
+        .make-sm-column(6);
+        .make-md-column(3);
+        .make-lg-column(2);
+        .padding-right-lg(@body-side-space);
+    }
+
+    .col-main {
+        .make-xs-column(12);
+        .make-sm-column(12);
+
+        .make-md-column(6);
+        .make-md-column-push(3);
+
+        .make-lg-column(8);
+        .make-lg-column-push(2);
+    }
+}
+
+select {
+    .form-control;  
+}

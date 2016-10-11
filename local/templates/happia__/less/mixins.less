@@ -1,0 +1,46 @@
+//
+// Bootstrap core mixins
+// --------------------------------------------------
+@import "bootstrap/mixins.less"; 
+
+// Creates a wrapper for a series of columns
+// fix need because .clearfix() not work when mixin.less imported
+.make-row(@gutter: @grid-gutter-width) {
+	.clearfix();	
+}
+
+.padding-top(@padding) {
+	padding-top: @padding !important; 
+}
+
+.padding-left(@padding) {
+	padding-left: @padding !important;
+}
+
+.padding-right(@padding) {
+	padding-right: @padding !important;
+}
+
+.padding-bottom(@padding) {
+	padding-bottom: @padding !important;
+}
+
+
+
+
+
+.margin-top(@margin) {
+	margin-top: unit(@margin,px) !important;
+}
+
+.margin-left(@margin) {
+	margin-left: unit(@margin,px) !important;
+}
+
+.margin-right(@margin) {
+	margin-right: unit(@margin,px) !important;
+}
+
+.margin-bottom(@margin) {
+	margin-bottom: unit(@margin,px) !important;
+}

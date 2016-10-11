@@ -1,0 +1,196 @@
+input:not([type="radio"]):not([type="checkbox"]):not([type="search"]):not(.btn),
+textarea {
+    .form-control;
+}
+
+textarea {
+    height: auto;
+}
+
+label {
+    font-weight: @font-weight-bold;
+}
+
+input[type="radio"], 
+input[type="checkbox"] {
+    margin: 2px 0 0;
+}
+
+.form-control.margin-bottom {
+    margin-bottom: 10px;
+}
+
+.input-group-addon label {
+    margin-bottom: 0;
+    font-weight: normal;
+}
+
+.input-group.product-qty {
+    .input-group-addon {
+        cursor: pointer;
+        background-color: @gray-light;
+        color: #fff;
+        border: none;
+        border-left: 7px solid transparent;
+        background-clip: padding-box;
+
+        &.product-plus {
+            border-left-width: 12px;
+        }
+
+        &:hover {
+            background-color: @gray-darker;
+            // border-color: @gray-darker;
+        }
+    }
+
+    input {
+        border: 1px solid @input-group-addon-border-color;
+        box-shadow: 0 0 0 5px @gray-link-border;
+        border-radius: 1px;
+    }
+}
+
+.ui-autocomplete {
+    z-index: 999999;
+}
+
+.ui-corner-all {
+    border-radius: 0;
+}
+
+body .ui-tooltip {
+    border-width: 1px;
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,.2);
+    box-shadow: 0 0 10px rgba(0,0,0,.2);
+
+    @media (max-width: @screen-xs-max) {
+        left: 0 !important;
+    }
+}
+
+.popover {
+   
+    .arrow, 
+    .arrow:after {
+        border-color: transparent;
+        border-style: solid;
+        display: block;
+        height: 0;
+        position: absolute;
+        width: 0;
+    }
+
+    .arrow {
+        border-width: 11px;
+    }
+
+    .arrow:after {
+        border-width: 10px;
+        content: "";
+    }
+
+    &.p_bottom {
+        margin-top: 10px;
+
+        .arrow {
+            border-bottom-color: rgba(0, 0, 0, 0.25);
+            border-top-width: 0;
+            left: 50%;
+            margin-left: -11px;
+            top: -11px;
+
+            &:after {
+                border-bottom-color: #ffffff;
+                border-top-width: 0;
+                margin-left: -10px;
+                top: 1px;
+            }
+        }
+    }
+}
+
+
+// Loading spinner
+// -------------------------
+
+.fa-spinner {
+    -webkit-animation: spin 1000ms infinite linear;
+    animation: spin 1000ms infinite linear;
+    font-size: 22px;
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
+}
+
+
+// Form icons
+// -------------------------
+
+.form-control-icon {
+    .form-control-feedback;
+}
+
+.inner-addon {
+    position: relative;
+}
+
+.inner-addon .input-addon {
+    position: absolute;
+    padding: 10px;
+    pointer-events: none;
+    z-index: @zindex-dropdown;
+}
+
+.left-addon .input-addon {
+    left: 0px;
+}
+
+.right-addon .input-addon {
+    right: 0px;
+}
+
+.left-addon input {
+    padding-left: 30px;
+}
+
+.right-addon input {
+    padding-right: 30px;
+}
+
+.ui-widget-content {
+    background: #fff;
+    font-family: @font-family-base;
+    font-size: @font-size-base;
+
+    li {
+        border: none;
+
+        &.ui-state-focus {
+            background: @brand-secondary-lighter;
+            border: none;
+            color: @text-color;
+            font-weight: @font-weight-base; 
+            margin: 0;
+        }
+    }
+}

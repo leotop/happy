@@ -1,0 +1,243 @@
+.page-title {
+	line-height: @line-height-computed * 2;
+	font-size: 25px;
+	font-style: italic;
+
+	small {
+		font-size: 18px;
+		color: @text-color;
+    }
+}
+
+.caption-img {
+
+}
+
+.intext {
+	max-width: 30%;
+}
+
+.intext.pull-left {
+	margin-right: 15px;
+    margin-bottom: 5px;
+}
+
+.intext.pull-right {
+	margin-left: 15px;
+    margin-bottom: 5px;
+}
+
+
+.intext img {
+    width: 100%;
+}
+
+.intext .caption-text {
+    font-size: 13px;
+    color: #000;
+    text-decoration: none;
+    width: 100%;
+    float: left;
+    text-align: center;
+    margin: 8px 0;
+}
+
+.bordered {
+    border: 1px solid #ddd;
+    padding: 5px;
+}
+
+.spacer {
+    border: none;	    
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.spacer-1 {
+    border-bottom: 1px dotted #b2b2b2;
+}
+
+.spacer-2 {
+    background: #000;
+    height: 2px;
+}
+
+.spacer-3 {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    text-align: center;
+    background-color: transparent !important;
+}
+
+.spacer-3:before, 
+.spacer-3:after {
+    position: absolute;
+    top: 51%;
+    overflow: hidden;
+    width: 50%;
+    height: 1px;
+    content: '\a0';
+    border-top: 4px double #000;
+    background-color: transparent !important;
+}
+
+.spacer-3:before {
+    margin-left: -52%;
+    text-align: right;
+}
+
+.spacer-3:after {
+    margin-left: 2%;
+    text-align: left;
+}
+
+.spacer.gray {
+	background-color: #bdc3c7;
+}
+
+.spacer.danger,
+.spacer.danger:before,
+.spacer.danger:after {
+	background-color: #a94442;
+	border-color: #a94442;
+	color: #a94442;
+}
+
+.spacer.success,
+.spacer.success:before,
+.spacer.success:after {
+	background-color: #3c763d;
+	border-color: #3c763d;	
+	color: #3c763d;
+}
+
+
+.dropcap1, .dropcap2 {
+    float: left;
+    text-align: center;
+    overflow: hidden;
+}
+
+.dropcap1 {
+    background-color: #3c763d;
+    background-image: -moz-linear-gradient(center top, rgba(255, 255, 255, 0.1) 0, rgba(0, 0, 0, 0.1) 100%);
+    background-position: left top;
+    background-repeat: repeat;
+    font-size: 30px;
+    line-height: 48px;
+    margin: 5px 15px 0 0;
+    width: 48px;
+    color: #fff;
+}
+
+.dropcap2 {
+    background-color: #a94442;
+    border-radius: 75px 75px 75px 75px;
+    color: #fff;
+    font-size: 29px;
+    line-height: 50px;
+    margin: 0 15px 0 0;
+    width: 50px;
+}
+
+.dropcap3 {
+    color: #000;
+    float: left;
+    font-size: 60px;
+    line-height: 25px;
+    margin: 0 10px 0 0;
+    padding: 11px 0;
+    position: relative;
+    text-transform: uppercase;
+    top: 5px;
+}
+
+.alert.pull-left,
+.alert.pull-right {
+	width: 30%;
+}
+
+.alert.pull-left {
+	margin-right: 15px;
+    margin-bottom: 5px;
+}
+
+.alert.pull-right {
+	margin-left: 15px;
+    margin-bottom: 5px;
+}
+
+
+.nav-tabs {
+    margin-bottom: 15px;
+}
+
+.help {
+    border-bottom: 1px dotted;
+    position: relative;
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+.help:after {
+    content: "?";
+    font-size: 10px;
+    position: absolute;
+    top: -2px;
+    right: -6px;
+}
+
+.help_icon {
+    background: #000;
+    filter: alpha(opacity=80);
+    opacity: .8;
+    border-radius: 50%;
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    text-align: center;
+    color: #fff;
+    margin: 0 3px -3px;
+    position: relative;
+    cursor: pointer;
+}
+
+.help_icon:after {
+    content: "?";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 18px;
+    text-align: center;
+    line-height: 18px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.popover-content img {
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+
+.abstand {
+	height: 50px;
+	float: left;
+	width: 100%;
+}
+
+// for jumbotron without .container as parent
+.jumbotron {
+	border-radius: @border-radius-large;
+
+	@media screen and (min-width: @screen-sm-min) {
+		padding-left:  (@jumbotron-padding * 2);
+		padding-right: (@jumbotron-padding * 2);
+	}
+}
+
+.collapse {
+    overflow: hidden;
+}

@@ -1,0 +1,105 @@
+@import "variables.less"; 
+
+.jcarousel-wrapper {
+    position: relative;
+}
+
+.jcarousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+
+    ul {
+        width: 20000em;
+        position: relative;
+        list-style: none;
+        margin: 0 !important;
+        padding: 0;
+
+        
+        li {
+            float: left;
+            width: 200px;
+        }
+    }
+}
+
+
+.jcarousel-more-views {
+    ul {
+        @media (min-width: @screen-sm-min) {
+            width: 100% !important;
+        }
+    }
+}
+
+/** Carousel Controls **/
+
+.jcarousel-control-prev,
+.jcarousel-control-next {
+    position: absolute;
+    top: 50%;
+    margin-top: -15px;
+    width: 25px;
+    height: 30px;
+    line-height: 25px;
+    text-align: center;
+    background: @gray-light;
+    color: #fff;
+    text-decoration: none;
+    font-size: 36px;
+    opacity: 0.7;
+    cursor: pointer;
+
+    &:hover, &:active, &:focus {
+        color: @gray-darker;
+        text-decoration: none;
+    }
+}
+
+.jcarousel-control-prev {
+    left: 0;
+}
+
+.jcarousel-control-next {
+    right: 0;
+}
+
+
+/** Carousel Pagination **/
+
+.jcarousel-pagination {
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+    margin: 0;
+
+    a {
+        text-decoration: none;
+        display: inline-block;
+        font-size: 11px;
+        height: 10px;
+        width: 10px;
+        line-height: 10px;
+        background: #fff;
+        color: #4E443C;
+        border-radius: 10px;
+        text-indent: -9999px;
+        margin-right: 7px;
+        -webkit-box-shadow: 0 0 2px #4E443C;
+        -moz-box-shadow: 0 0 2px #4E443C;
+        box-shadow: 0 0 2px #4E443C;
+
+        &.active {
+            background: #4E443C;
+            color: #fff;
+            opacity: 1;
+            -webkit-box-shadow: 0 0 2px #F0EFE7;
+            -moz-box-shadow: 0 0 2px #F0EFE7;
+            box-shadow: 0 0 2px #F0EFE7;
+        }
+    }
+}
